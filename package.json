@@ -1,8 +1,8 @@
 {
     "name": "my-app",
-    "productName": "my-app",
+    "productName": "My App",
     "version": "1.0.0",
-    "description": "My Electron application description",
+    "description": "My App adalah aplikasi API Manager yang memungkinkan pengguna untuk mengelola dan mengonfigurasi berbagai tools sesuai kebutuhan. Dengan antarmuka yang intuitif, pengguna dapat dengan mudah menambahkan, menghapus, dan mengatur alat yang diperlukan untuk meningkatkan efisiensi dan produktivitas.",
     "main": ".webpack/main",
     "scripts": {
         "start": "electron-forge start",
@@ -68,5 +68,6 @@
         "electron-squirrel-startup": "^1.0.1",
         "lit": "^3.2.1",
         "update-electron-app": "^3.0.0"
-    }
+    },
+    "repository": "github:ndiing/my-app"
 }
