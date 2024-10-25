@@ -4,16 +4,14 @@ const { FuseV1Options, FuseVersion } = require("@electron/fuses");
 module.exports = {
     packagerConfig: {
         asar: true,
-        icon: "images/icon", // no file extension required
+        icon: "images/icon",
     },
     rebuildConfig: {},
     makers: [
         {
             name: "@electron-forge/maker-squirrel",
             config: {
-                // An URL to an ICO file to use as the application icon (displayed in Control Panel > Programs and Features).
                 iconUrl: "https://raw.githubusercontent.com/ndiing/my-app/refs/heads/master/images/icon.png",
-                // The ICO file to use as the icon for the generated Setup.exe
                 setupIcon: "images/icon.ico",
             },
         },
@@ -56,8 +54,6 @@ module.exports = {
                 },
             },
         },
-        // Fuses are used to enable/disable various Electron functionality
-        // at package time, before code signing the application
         new FusesPlugin({
             version: FuseVersion.V1,
             [FuseV1Options.RunAsNode]: false,

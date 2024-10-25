@@ -33,11 +33,7 @@ module.exports = {
         }),
 
         new MiniCssExtractPlugin(),
-
-        // Add your plugins here
-        // Learn more about plugins from https://webpack.js.org/configuration/plugins/
     ],
-    // Put your normal webpack config below here
     module: {
         rules: [
             {
