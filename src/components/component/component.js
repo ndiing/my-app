@@ -1,31 +1,41 @@
-import { LitElement } from "lit";
+import { LitElement, html } from "lit";
+import { msg, updateWhenLocaleChanges } from "@lit/localize";
 
 /**
- * Class representing a custom component extending LitElement.
+ * Kelas MyComponent adalah komponen LitElement yang mendukung lokalizasi.
+ *
  * @extends LitElement
  */
 class MyComponent extends LitElement {
+    constructor() {
+        super();
+        updateWhenLocaleChanges(this);
+    }
+
     /**
-     * Creates the render root for the component.
-     * @returns {HTMLElement} The render root element.
+     * Membuat root rendering untuk komponen ini.
+     *
+     * @returns {MyComponent} Mengembalikan instance dari MyComponent.
      */
     createRenderRoot() {
         return this;
     }
 
     /**
-     * Adds an event listener to the component.
-     * @param {string} type - The event type to listen for.
-     * @param {Function} listener - The function to call when the event is triggered.
+     * Menambahkan listener untuk event yang diberikan.
+     *
+     * @param {string} type - Tipe event yang akan didengarkan.
+     * @param {Function} listener - Fungsi yang akan dipanggil ketika event terjadi.
      */
     on(type, listener) {
         this.addEventListener(type, listener);
     }
 
     /**
-     * Emits a custom event from the component.
-     * @param {string} type - The type of the event to emit.
-     * @param {Object} detail - The detail object to pass with the event.
+     * Mengeluarkan event kustom dengan detail yang diberikan.
+     *
+     * @param {string} type - Tipe event yang akan dikeluarkan.
+     * @param {Object} detail - Data yang ingin dikirim dengan event.
      */
     emit(type, detail) {
         const event = new CustomEvent(type, {

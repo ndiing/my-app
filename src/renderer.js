@@ -1,4 +1,6 @@
-import { MyComponent } from "./components/component/component.js";
+import "./components/components.scss";
+import "./components/components.js";
+
 import { Router } from "./components/router/router.js";
 
 import DemoMainComponent from "./demo/main/main.js";

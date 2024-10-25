@@ -1,11 +1,14 @@
 /**
- * Class representing a Router for managing routes.
+ * Kelas Router mengelola routing untuk aplikasi,
+ * termasuk penanganan navigasi, pengaturan rute, dan pencocokan rute.
  */
 class Router {
     /**
-     * Sets the routes and prepares their properties.
-     * @param {Array<Object>} routes - The list of route objects.
-     * @param {Object|null} parent - The parent route object, if any.
+     * Mengatur rute yang diberikan dan membuat regex untuk pencocokan.
+     *
+     * @static
+     * @param {Array<Object>} routes - Daftar rute yang akan diatur.
+     * @param {Object|null} parent - Rute induk untuk menentukan path relatif.
      */
     static set(routes = [], parent = null) {
         for (const route of routes) {
@@ -18,11 +21,13 @@ class Router {
     }
 
     /**
-     * Gets the route matching the given path.
-     * @param {string} path - The path to match against the routes.
-     * @param {Array<Object>} routes - The list of routes to search.
-     * @param {Array<Object>} stacks - The stack of matched routes.
-     * @returns {Object|null} The matching route object, or null if no match is found.
+     * Mendapatkan rute berdasarkan path yang diberikan.
+     *
+     * @static
+     * @param {string} path - Path yang ingin dicocokkan dengan rute.
+     * @param {Array<Object>} routes - Daftar rute untuk dicocokkan (default adalah rute yang terdaftar).
+     * @param {Array<Object>} stacks - Tumpukan rute yang telah dicocokkan sebelumnya.
+     * @returns {Object|null} Rute yang cocok atau null jika tidak ada.
      */
     static get(path = "/", routes = this.routes, stacks = []) {
         for (const route of routes) {
@@ -43,8 +48,10 @@ class Router {
     }
 
     /**
-     * Handles navigation events triggered by click actions.
-     * @param {MouseEvent} event - The click event.
+     * Menangani navigasi saat elemen dengan atribut routerLink diklik.
+     *
+     * @static
+     * @param {Event} event - Event yang dihasilkan dari klik.
      */
     static handleNavigate(event) {
         const element = event.target.closest("[routerLink]");
@@ -57,16 +64,20 @@ class Router {
     }
 
     /**
-     * Gets the current pathname from the window location.
-     * @returns {string} The current pathname.
+     * Mengambil pathname dari URL saat ini.
+     *
+     * @static
+     * @returns {string} Pathname dari URL saat ini.
      */
     static get pathname() {
         return window.location.pathname;
     }
 
     /**
-     * Handles navigation to the matched route and loads the appropriate components.
-     * @param {MouseEvent} event - The navigation event.
+     * Menangani navigasi berdasarkan pathname saat ini.
+     *
+     * @static
+     * @param {Event} event - Event yang dihasilkan dari navigasi.
      */
     static async handleNavigation(event) {
         const route = this.get(this.pathname);
@@ -130,8 +141,10 @@ class Router {
     }
 
     /**
-     * Initializes the router with the given routes and sets up event listeners.
-     * @param {Array<Object>} routes - The list of route objects.
+     * Menginisialisasi router dengan rute yang diberikan dan menambahkan listener untuk navigasi.
+     *
+     * @static
+     * @param {Array<Object>} routes - Daftar rute yang akan diatur.
      */
     static init(routes = []) {
         this.routes = routes;
