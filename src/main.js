@@ -11,7 +11,7 @@ if (require("electron-squirrel-startup")) {
 }
 
 let myWindow = null;
-let tray;
+let tray = null;
 const additionalData = { myKey: "myValue" };
 const gotTheLock = app.requestSingleInstanceLock(additionalData);
 const template = [
