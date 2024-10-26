@@ -1,0 +1,61 @@
+@keyframes ripple-out {
+    0% {
+        width: 0;
+    }
+}
+
+.my-ripple {
+    position: relative;
+    --md-comp-ripple-radius: 141.4213562373095%;
+    --md-comp-ripple-left: 50%;
+    --md-comp-ripple-top: 50%;
+    --md-comp-ripple-translateX: 0%;
+    --md-comp-ripple-translateY: 0%;
+
+    &::after {
+        content: "";
+        width: var(--md-comp-ripple-radius);
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+        background-color: var(--md-sys-color-primary);
+        opacity: 0;
+        position: absolute;
+        left: var(--md-comp-ripple-left);
+        top: var(--md-comp-ripple-top);
+        z-index: 1;
+        transform: translate3d(-50%, -50%, 0) translate3d(var(--md-comp-ripple-translateX), var(--md-comp-ripple-translateY), 0);
+        pointer-events: none;
+    }
+}
+
+.my-ripple--bounded {
+    overflow: hidden;
+}
+
+.my-ripple--trigger {
+    cursor: pointer;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.my-ripple--focus {
+    &::after {
+        opacity: 10%;
+        animation-name: ripple-out;
+        animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
+        animation-duration: var(--md-sys-motion-duration-short4);
+    }
+}
+
+.my-ripple--press {
+    &::after {
+        opacity: 10%;
+        animation-name: none;
+    }
+}
+
+.my-ripple--hover {
+    &::after {
+        opacity: 8%;
+    }
+}

@@ -11,6 +11,20 @@
     gap: 0 8px;
     // background-color: var(--md-sys-color-primary);
     color: var(--md-sys-color-primary);
+    position: relative;
+}
+.my-button__native {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    color: transparent;
+    font-size: 0;
+    line-height: 0;
+    letter-spacing: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
 }
 .my-button__icon {
     width: 18px;
@@ -55,6 +69,11 @@
         margin-left: -8px;
         + .my-button__label {
             margin-right: 0;
+        }
+    }
+    &.my-ripple {
+        &::after {
+            background-color: var(--md-sys-color-on-primary);
         }
     }
 }
