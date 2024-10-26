@@ -47,6 +47,7 @@ Router.init([
             { path: "button", load: () => import("./demo/button/button.js").then((m) => m.default) },
             { path: "segmented-button", load: () => import("./demo/segmented-button/segmented-button.js").then((m) => m.default) },
             { path: "icon-button", load: () => import("./demo/icon-button/icon-button.js").then((m) => m.default) },
+            { path: "fab", load: () => import("./demo/fab/fab.js").then((m) => m.default) },
         ],
     },
     {

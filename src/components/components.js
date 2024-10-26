@@ -9,3 +9,4 @@ import "./icon/icon.js";
 import "./button/button.js";
 import "./segmented-button/segmented-button.js";
 import "./icon-button/icon-button.js";
+import "./fab/fab.js";
