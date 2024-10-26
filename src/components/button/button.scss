@@ -1,0 +1,38 @@
+@use "../mixins/mixins.scss";
+
+.my-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    height: 40px;
+    border-radius: 20px;
+    padding: 0 12px;
+    gap: 0 8px;
+}
+.my-button__icon {
+    width: 18px;
+    height: 18px;
+    font-size: 18px;
+    + .my-button__label {
+        margin-right: 4px;
+    }
+}
+.my-button__label {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    @include mixins.typescale-label-large();
+}
+
+.my-button {
+    background-color: var(--md-sys-color-secondary-container);
+    color: var(--md-sys-color-on-secondary-container);
+    padding: 0 24px;
+    .my-button__icon {
+        margin-left: -8px;
+        + .my-button__label {
+            margin-right: 0;
+        }
+    }
+}

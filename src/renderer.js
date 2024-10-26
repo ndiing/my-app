@@ -43,6 +43,7 @@ Router.init([
                     },
                 ],
             },
+            { path: "button", load: () => import("./demo/button/button.js").then((m) => m.default) },
         ],
     },
     {

@@ -21,6 +21,12 @@ class MyComponent extends LitElement {
         return this;
     }
 
+    connectedCallback() {
+        super.connectedCallback();
+
+        this.classList.add(this.localName);
+    }
+
     /**
      * Menambahkan listener untuk event yang diberikan.
      *
