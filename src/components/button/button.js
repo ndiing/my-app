@@ -4,7 +4,7 @@ import { RippleController } from "../ripple/ripple";
 
 class MdButtonComponent extends MdComponent {
     static properties = {
-        ...MdComponent.properties,
+        variant: { type: String },
         label: { type: String },
         icon: { type: String },
         type: { type: String },
@@ -32,6 +32,16 @@ class MdButtonComponent extends MdComponent {
             ${this.icon ? html`<md-icon class="md-button__icon">${this.icon}</md-icon>` : nothing}
             ${this.label ? html`<div class="md-button__label">${this.label}</div>` : nothing}
         `
+    }
+
+    updated(changedProperties) {
+        super.updated(changedProperties);
+
+        if (changedProperties.has("variant")) {
+            for (const variant of this.variants) {
+                this.classList.toggle(this.localName + "--" + variant, this.variant === variant);
+            }
+        }
     }
 }
 

@@ -15,13 +15,14 @@ class DemoMainComponent extends MdComponent {
                         <!-- <div routerLink="/blogs/1">/blogs/1</div> -->
                         <!-- <div routerLink="/blogs/1/xyz">/blogs/1/xyz</div> -->
                         <!-- <div routerLink="/xyz">/xyz</div> -->
-                         
+
                         <div routerLink="/icon">/icon</div>
                         <div routerLink="/button">/button</div>
                         <div routerLink="/segmented-button">/segmented-button</div>
                         <div routerLink="/icon-button">/icon-button</div>
                         <div routerLink="/fab">/fab</div>
-                        
+                        <div routerLink="/extended-fab">/extended-fab</div>
+                        <div routerLink="/form">/form</div>
                     </div>
                 </div>
                 <div class="md-border__item--center" style="padding:24px;">

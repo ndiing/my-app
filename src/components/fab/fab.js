@@ -4,14 +4,17 @@ import { RippleController } from "../ripple/ripple";
 
 class MdFabComponent extends MdComponent {
     static properties = {
-        ...MdComponent.properties,
+        variant: { type: String },
+        size: { type: String },
         label: { type: String },
         icon: { type: String },
         type: { type: String },
         selected: { type: Boolean, reflect: true },
+        extended: { type: Boolean, reflect: true },
     };
 
-    variants = ["elevated", "filled", "tonal", "outlined", "text"];
+    variants = ["surface", "secondary", "tertiary"];
+    sizes = ["small", "large"];
 
     constructor() {
         super();
@@ -22,7 +25,14 @@ class MdFabComponent extends MdComponent {
             trigger: ".md-fab__native",
         });
 
-        this.type = "fab";
+        this.type = "button";
+
+        // fab
+        // required icon
+
+        // extended fab
+        // required label
+        // optional icon
     }
 
     render() {
@@ -32,6 +42,22 @@ class MdFabComponent extends MdComponent {
             ${this.icon ? html`<md-icon class="md-fab__icon">${this.icon}</md-icon>` : nothing}
             ${this.label ? html`<div class="md-fab__label">${this.label}</div>` : nothing}
         `
+    }
+
+    updated(changedProperties) {
+        super.updated(changedProperties);
+
+        if (changedProperties.has("variant")) {
+            for (const variant of this.variants) {
+                this.classList.toggle(this.localName + "--" + variant, this.variant === variant);
+            }
+        }
+
+        if (changedProperties.has("size")) {
+            for (const size of this.sizes) {
+                this.classList.toggle(this.localName + "--" + size, this.size === size);
+            }
+        }
     }
 }
 

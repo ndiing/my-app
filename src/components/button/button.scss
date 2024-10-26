@@ -9,6 +9,9 @@
     border-radius: 20px;
     padding: 0 12px;
     gap: 0 8px;
+    background-color: var(--md-sys-color-surface);
+    color: var(--md-sys-color-primary);
+    box-shadow: none;
     position: relative;
 }
 .md-button__native {
@@ -98,19 +101,6 @@
         margin-left: -8px;
         + .md-button__label {
             margin-right: 0;
-        }
-    }
-}
-
-.md-button--text {
-    background-color: var(--md-sys-color-surface);
-    color: var(--md-sys-color-primary);
-    box-shadow: none;
-    padding: 0 12px;
-    .md-button__icon {
-        margin-left: 0px;
-        + .md-button__label {
-            margin-right: 4px;
         }
     }
 }

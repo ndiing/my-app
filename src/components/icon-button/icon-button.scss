@@ -3,7 +3,17 @@
     align-items: center;
     justify-content: center;
     vertical-align: middle;
+    background-color: var(--md-sys-color-surface);
+    color: var(--md-sys-color-on-surface);
     position: relative;
+    &[toggle] {
+        background-color: var(--md-sys-color-surface);
+        color: var(--md-sys-color-on-surface);
+        &[selected] {
+            background-color: var(--md-sys-color-surface);
+            color: var(--md-sys-color-primary);
+        }
+    }
 }
 .md-icon-button__native {
     width: 100%;
@@ -84,18 +94,6 @@
                     background-color: var(--md-sys-color-on-primary);
                 }
             }
-        }
-    }
-}
-.md-icon-button--standard {
-    background-color: var(--md-sys-color-surface);
-    color: var(--md-sys-color-on-surface);
-    &[toggle] {
-        background-color: var(--md-sys-color-surface);
-        color: var(--md-sys-color-on-surface);
-        &[selected] {
-            background-color: var(--md-sys-color-surface);
-            color: var(--md-sys-color-primary);
         }
     }
 }

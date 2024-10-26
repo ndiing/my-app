@@ -4,7 +4,6 @@ import { ifDefined } from "lit/directives/if-defined.js";
 
 class MdSegmentedButtonComponent extends MdComponent {
     static properties = {
-        ...MdComponent.properties,
         select: { type: String },
         items: { type: Array },
     };
@@ -40,9 +39,9 @@ class MdSegmentedButtonComponent extends MdComponent {
         if (this.select === "multi") {
             data.selected = !data.selected;
         } else {
-            this.items.forEach((item) => {
+            for (const item of this.items) {
                 item.selected = item === data;
-            });
+            }
         }
         this.requestUpdate();
 

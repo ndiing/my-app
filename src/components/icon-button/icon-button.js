@@ -4,7 +4,7 @@ import { RippleController } from "../ripple/ripple";
 
 class MdIconButtonComponent extends MdComponent {
     static properties = {
-        ...MdComponent.properties,
+        variant: { type: String },
         icon: { type: String },
         type: { type: String },
         selected: { type: Boolean, reflect: true },
@@ -24,7 +24,7 @@ class MdIconButtonComponent extends MdComponent {
             radius: 40,
         });
 
-        this.type = "icon-button";
+        this.type = "button";
     }
 
     render() {
@@ -43,6 +43,16 @@ class MdIconButtonComponent extends MdComponent {
     disconnectedCallback() {
         super.disconnectedCallback();
         this.removeEventListener("click", this.handleIconButtonClick.bind(this));
+    }
+
+    updated(changedProperties) {
+        super.updated(changedProperties);
+
+        if (changedProperties.has("variant")) {
+            for (const variant of this.variants) {
+                this.classList.toggle(this.localName + "--" + variant, this.variant === variant);
+            }
+        }
     }
 
     handleIconButtonClick(event) {

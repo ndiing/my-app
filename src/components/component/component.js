@@ -7,12 +7,6 @@ import { msg, updateWhenLocaleChanges } from "@lit/localize";
  * @extends LitElement
  */
 class MdComponent extends LitElement {
-    static properties = {
-        variant: { type: String },
-    };
-
-    variants = [];
-
     constructor() {
         super();
         updateWhenLocaleChanges(this);
@@ -35,12 +29,6 @@ class MdComponent extends LitElement {
 
     updated(changedProperties) {
         super.updated(changedProperties);
-
-        if (changedProperties.has("variant")) {
-            for (const variant of this.variants) {
-                this.classList.toggle(this.localName + "--" + variant, this.variant === variant);
-            }
-        }
     }
 
     /**
