@@ -5,7 +5,7 @@ class DemoMainComponent extends MyComponent {
     render() {
         return html`
             <div class="my-border">
-                <div class="my-border__item--west" style="width:360px;">
+                <div class="my-border__item--west" style="width:360px;padding:24px;">
                     <div>
                         <!-- <div routerLink="/">/</div> -->
                         <!-- <div routerLink="/users">/users</div> -->
@@ -15,10 +15,11 @@ class DemoMainComponent extends MyComponent {
                         <!-- <div routerLink="/blogs/1">/blogs/1</div> -->
                         <!-- <div routerLink="/blogs/1/xyz">/blogs/1/xyz</div> -->
                         <!-- <div routerLink="/xyz">/xyz</div> -->
+                        <div routerLink="/icon">/icon</div>
                         <div routerLink="/button">/button</div>
                     </div>
                 </div>
-                <div class="my-border__item--center">
+                <div class="my-border__item--center" style="padding:24px;">
                     <!-- <h1>Main</h1> -->
                     <!-- <my-outlet name="user"></my-outlet> -->
                     <my-outlet></my-outlet>

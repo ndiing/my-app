@@ -3,9 +3,18 @@ import { MyComponent } from "../component/component";
 
 class MyButtonComponent extends MyComponent {
     static properties = {
+        ...MyComponent.properties,
         label: { type: String },
         icon: { type: String },
     };
+
+    variants = ["elevated", "filled", "tonal", "outlined", "text"];
+
+    constructor() {
+        super();
+
+        this.variant = "text";
+    }
 
     render() {
         /* prettier-ignore */
