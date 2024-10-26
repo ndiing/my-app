@@ -59,6 +59,9 @@ class RippleController {
         await this.host.updateComplete;
 
         this.container = this.host;
+        if (this.options.container) {
+            this.container = this.host.querySelector(this.options.container);
+        }
 
         this.trigger = this.container;
         if (this.options.trigger) {
@@ -70,8 +73,7 @@ class RippleController {
 
         this.radius = 141.4213562373095;
         if (this.options.radius) {
-            const rect = this.container.getBoundingClientRect();
-            this.radius = (this.options.radius / rect.width) * 100;
+            this.radius = (this.options.radius / this.container.clientWidth) * 100;
         }
         this.container.style.setProperty("--md-comp-ripple-radius", this.radius + "%");
 

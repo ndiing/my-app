@@ -77,7 +77,7 @@ class DemoFormComponent extends MdComponent {
                             </div>
                             <div class="md-grid__item--expanded6 md-grid__item--medium4 md-grid__item--compact4">
                                 <label>color</label><br>
-                                <input type="color" name="color" value="color" value="#000000">
+                                <input type="color" name="color" value="#112233">
                             </div>
                             <div class="md-grid__item--expanded6 md-grid__item--medium4 md-grid__item--compact4">
                                 <label>file</label><br>

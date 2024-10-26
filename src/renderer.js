@@ -49,6 +49,7 @@ Router.init([
             { path: "icon-button", load: () => import("./demo/icon-button/icon-button.js").then((m) => m.default) },
             { path: "fab", load: () => import("./demo/fab/fab.js").then((m) => m.default) },
             { path: "extended-fab", load: () => import("./demo/extended-fab/extended-fab.js").then((m) => m.default) },
+            { path: "checkbox", load: () => import("./demo/checkbox/checkbox.js").then((m) => m.default) },
             { path: "form", load: () => import("./demo/form/form.js").then((m) => m.default) },
         ],
     },

@@ -22,6 +22,7 @@ class DemoMainComponent extends MdComponent {
                         <div routerLink="/icon-button">/icon-button</div>
                         <div routerLink="/fab">/fab</div>
                         <div routerLink="/extended-fab">/extended-fab</div>
+                        <div routerLink="/checkbox">/checkbox</div>
                         <div routerLink="/form">/form</div>
                     </div>
                 </div>
