@@ -7,3 +7,4 @@ import "./store/store.js";
 import "./ripple/ripple.js";
 import "./icon/icon.js";
 import "./button/button.js";
+import "./segmented-button/segmented-button.js";

@@ -42,17 +42,17 @@ if (!gotTheLock) {
     });
 
     const createWindow = () => {
-        // myWindow = new BrowserWindow({
-        //     width: 800,
-        //     height: 600,
-        //     webPreferences: {
-        //         preload: MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY,
-        //     },
-        // });
-        // myWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY);
-        // // myWindow.webContents.openDevTools();
-        // const menu = Menu.buildFromTemplate([{ label: "Menu", submenu: template }]);
-        // Menu.setApplicationMenu(menu);
+        myWindow = new BrowserWindow({
+            width: 800,
+            height: 600,
+            webPreferences: {
+                preload: MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY,
+            },
+        });
+        myWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY);
+        // myWindow.webContents.openDevTools();
+        const menu = Menu.buildFromTemplate([{ label: "Menu", submenu: template }]);
+        Menu.setApplicationMenu(menu);
     };
 
     const NOTIFICATION_TITLE = "Basic Notification";

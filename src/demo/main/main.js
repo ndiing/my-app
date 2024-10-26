@@ -17,6 +17,7 @@ class DemoMainComponent extends MyComponent {
                         <!-- <div routerLink="/xyz">/xyz</div> -->
                         <div routerLink="/icon">/icon</div>
                         <div routerLink="/button">/button</div>
+                        <div routerLink="/segmented-button">/segmented-button</div>
                     </div>
                 </div>
                 <div class="my-border__item--center" style="padding:24px;">
