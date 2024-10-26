@@ -1,5 +1,5 @@
-import { LitElement, html } from "lit";
-import { msg, updateWhenLocaleChanges } from "@lit/localize";
+import { LitElement } from "lit";
+import { updateWhenLocaleChanges } from "@lit/localize";
 
 /**
  * Kelas MdComponent adalah komponen LitElement yang mendukung lokalizasi.

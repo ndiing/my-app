@@ -1,4 +1,4 @@
-import { Hct, themeFromImage } from "@material/material-color-utilities";
+import { themeFromImage } from "@material/material-color-utilities";
 import { argbFromHex, themeFromSourceColor, applyTheme } from "@material/material-color-utilities";
 
 /**

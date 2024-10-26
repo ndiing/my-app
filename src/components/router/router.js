@@ -91,7 +91,7 @@ class Router {
      * @static
      * @param {Event} event - Event yang dihasilkan dari navigasi.
      */
-    static async handleNavigation(event) {
+    static async handleNavigation() {
         const route = this.get(this.pathname);
 
         if (this.controller && !this.controller.signal.aborted) this.controller.abort();
@@ -112,17 +112,18 @@ class Router {
                         stack.beforeLoad(next);
                     });
                 } catch (error) {
+                    console.error(error);
                     break;
                 }
             }
 
             if (!stack.component) stack.component = await stack.load();
             const container = stack.parent?.component || document.body;
-            const outlet = await new Promise((resolve, reject) => {
-                let target = stack.outlet ? document.body : container;
-                let selector = stack.outlet ? `md-outlet[name="${stack.outlet}"]` : "md-outlet";
-                let outlet;
-                let observer;
+            const outlet = await new Promise((resolve) => {
+                const target = stack.outlet ? document.body : container;
+                const selector = stack.outlet ? `md-outlet[name="${stack.outlet}"]` : "md-outlet";
+                let outlet = null;
+                let observer = null;
                 const callback = () => {
                     outlet = target.querySelector(selector);
 

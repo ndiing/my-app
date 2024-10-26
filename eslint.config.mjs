@@ -43,9 +43,18 @@ export default [
             },
         },
         rules: {
-            "no-alert": "warn",
-            "no-console": "warn",
-            "lines-between-class-members": ["error", "always"], // Tambahkan garis kosong antara class methods
+            // 'semi': ['error', 'always'],
+            // 'quotes': ['error', 'single'],
+            // 'curly': 'error',
+            // 'indent': ['error', 4],
+            "no-unused-vars": "warn",
+            // 'no-console': 'warn',
+            // 'linebreak-style': ['error', 'unix'],
+            "prefer-const": "error",
+            // 'no-mixed-spaces-and-tabs': 'error',
+            // 'max-len': ['warn', { code: 80 }],
+            "lines-between-class-members": ["error", "always"],
+            "prefer-arrow-callback": "error",
         },
     },
 ];

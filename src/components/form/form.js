@@ -1,4 +1,4 @@
-import { html, nothing } from "lit";
+import { html } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { createRef, ref } from "lit/directives/ref.js";
@@ -52,7 +52,7 @@ class MdFormComponent extends MdComponent {
     }
 
     submit(submitButton) {
-        let myForm = this.formNative.value;
+        const myForm = this.formNative.value;
 
         if (myForm.requestSubmit) {
             if (submitButton) {
