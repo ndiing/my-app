@@ -20,6 +20,7 @@ class DemoMainComponent extends MdComponent {
                         <div routerLink="/button">/button</div>
                         <div routerLink="/segmented-button">/segmented-button</div>
                         <div routerLink="/icon-button">/icon-button</div>
+                        <div routerLink="/fab">/fab</div>
                         
                     </div>
                 </div>
