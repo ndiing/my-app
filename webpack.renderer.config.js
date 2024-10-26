@@ -15,28 +15,28 @@ rules.push({
 });
 
 module.exports = {
-    // mode: isProduction ? "production" : "development",
-    // entry: "./src/renderer.js",
-    // output: {
-    //     path: path.resolve(__dirname, "dist"),
-    // },
-    // devServer: {
-    //     open: true,
-    //     host: "localhost",
-    //     compress: true,
-    //     historyApiFallback: true,
-    //     static: "./",
-    // },
+    mode: isProduction ? "production" : "development",
+    entry: "./src/renderer.js",
+    output: {
+        path: path.resolve(__dirname, "dist"),
+    },
+    devServer: {
+        open: true,
+        host: "localhost",
+        compress: true,
+        historyApiFallback: true,
+        static: "./",
+    },
     plugins: [
-        // new HtmlWebpackPlugin({
-        //     template: "./src/index.html",
-        // }),
+        new HtmlWebpackPlugin({
+            template: "./src/index.html",
+        }),
 
         new MiniCssExtractPlugin(),
     ],
     module: {
         rules: [
-            ...rules,
+            // ...rules,
             {
                 test: /\.(js|jsx)$/i,
                 loader: "babel-loader",

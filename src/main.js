@@ -27,15 +27,15 @@ if (!gotTheLock) {
 
     const createWindow = () => {
         myWindow = new BrowserWindow({
-            width: 800,
-            height: 600,
+            // width: 800,
+            // height: 600,
+            frame: false,
             webPreferences: {
                 preload: MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY,
             },
         });
         myWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY);
         // myWindow.webContents.openDevTools();
-        myWindow.removeMenu();
     };
 
     const NOTIFICATION_TITLE = "Basic Notification";
