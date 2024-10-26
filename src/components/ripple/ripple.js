@@ -15,16 +15,16 @@ class RippleController {
     }
 
     handlePointerenter() {
-        this.container.classList.add("my-ripple--hover");
+        this.container.classList.add("md-ripple--hover");
     }
 
     handlePointerleave() {
-        this.container.classList.remove("my-ripple--hover");
+        this.container.classList.remove("md-ripple--hover");
     }
 
     handlePointerdown(event) {
         window.addEventListener("pointerup", this.handlePointerup.bind(this));
-        this.container.classList.add("my-ripple--press");
+        this.container.classList.add("md-ripple--press");
 
         const rect = this.container.getBoundingClientRect();
 
@@ -44,16 +44,16 @@ class RippleController {
     }
 
     handlePointerup() {
-        this.container.classList.remove("my-ripple--press");
+        this.container.classList.remove("md-ripple--press");
         window.removeEventListener("pointerup", this.handlePointerup.bind(this));
     }
 
     handleFocus() {
-        this.container.classList.add("my-ripple--focus");
+        this.container.classList.add("md-ripple--focus");
     }
 
     handleBlur() {
-        this.container.classList.remove("my-ripple--focus");
+        this.container.classList.remove("md-ripple--focus");
     }
 
     async hostConnected() {
@@ -66,12 +66,12 @@ class RippleController {
             this.trigger = this.host.querySelector(this.options.trigger);
         }
 
-        this.container.classList.add("my-ripple");
-        this.container.classList.toggle("my-ripple--bounded", !this.options.unbounded);
+        this.container.classList.add("md-ripple");
+        this.container.classList.toggle("md-ripple--bounded", !this.options.unbounded);
         this.radius = 141.4213562373095;
 
         this.trigger.setAttribute("tabIndex", 0);
-        this.trigger.classList.add("my-ripple--trigger");
+        this.trigger.classList.add("md-ripple--trigger");
 
         this.trigger.addEventListener("pointerenter", this.handlePointerenter.bind(this));
         this.trigger.addEventListener("pointerleave", this.handlePointerleave.bind(this));

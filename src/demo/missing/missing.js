@@ -1,11 +1,11 @@
 import { html } from "lit";
-import { MyComponent } from "../../components/component/component";
+import { MdComponent } from "../../components/component/component";
 
-class DemoMissingComponent extends MyComponent {
+class DemoMissingComponent extends MdComponent {
     render() {
         return html`
             <h1>Missing</h1>
-            <my-outlet></my-outlet>
+            <md-outlet></md-outlet>
         `;
     }
 }

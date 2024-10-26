@@ -1,16 +1,16 @@
 import { html } from "lit";
-import { MyComponent } from "../../components/component/component";
+import { MdComponent } from "../../components/component/component";
 
-class DemoIconComponent extends MyComponent {
+class DemoIconComponent extends MdComponent {
     render() {
         /* prettier-ignore */
         return html`
-            <div class="my-grid">
-                <div class="my-grid__item--expanded4 my-grid__item--medium4 my-grid__item--compact4">
-                    <my-icon>add</my-icon>
+            <div class="md-grid">
+                <div class="md-grid__item--expanded4 md-grid__item--medium4 md-grid__item--compact4">
+                    <md-icon>add</md-icon>
                 </div>
-                <div class="my-grid__item--expanded4 my-grid__item--medium4 my-grid__item--compact4"></div>
-                <div class="my-grid__item--expanded4 my-grid__item--medium4 my-grid__item--compact4"></div>
+                <div class="md-grid__item--expanded4 md-grid__item--medium4 md-grid__item--compact4"></div>
+                <div class="md-grid__item--expanded4 md-grid__item--medium4 md-grid__item--compact4"></div>
             </div>
         `;
     }

@@ -47,6 +47,14 @@ class Router {
         }
     }
 
+    static navigate(url) {
+        if (this.historyApiFallback) {
+            window.history.pushState({}, "", url);
+        } else {
+            window.location.hash = url;
+        }
+    }
+
     /**
      * Menangani navigasi saat elemen dengan atribut routerLink diklik.
      *
@@ -58,8 +66,8 @@ class Router {
 
         if (element) {
             event.preventDefault();
-            const routerLink = element.getAttribute("routerLink");
-            window.history.pushState({}, "", routerLink);
+            const url = element.getAttribute("routerLink");
+            Router.navigate(url);
         }
     }
 
@@ -70,7 +78,11 @@ class Router {
      * @returns {string} Pathname dari URL saat ini.
      */
     static get pathname() {
-        return window.location.pathname;
+        if (this.historyApiFallback) {
+            return window.location.pathname;
+        } else {
+            return window.location.hash.replace(/^#/, "").replace(/\?.*?$/, "") || "/";
+        }
     }
 
     /**
@@ -108,7 +120,7 @@ class Router {
             const container = stack.parent?.component || document.body;
             const outlet = await new Promise((resolve, reject) => {
                 let target = stack.outlet ? document.body : container;
-                let selector = stack.outlet ? `my-outlet[name="${stack.outlet}"]` : "my-outlet";
+                let selector = stack.outlet ? `md-outlet[name="${stack.outlet}"]` : "md-outlet";
                 let outlet;
                 let observer;
                 const callback = () => {
@@ -128,7 +140,7 @@ class Router {
                 outlet.parentElement.insertBefore(stack.component, outlet.nextElementSibling);
                 stack.component.isComponent = true;
             }
-            const outlets = [...document.querySelectorAll("my-outlet")];
+            const outlets = [...document.querySelectorAll("md-outlet")];
 
             for (const outlet of outlets) {
                 let nextElement = outlet.nextElementSibling;
@@ -139,6 +151,8 @@ class Router {
             }
         }
     }
+
+    static historyApiFallback = false;
 
     /**
      * Menginisialisasi router dengan rute yang diberikan dan menambahkan listener untuk navigasi.
@@ -157,7 +171,11 @@ class Router {
         };
         window.addEventListener("click", this.handleNavigate.bind(this));
         window.addEventListener("DOMContentLoaded", this.handleNavigation.bind(this));
-        window.addEventListener("popstate", this.handleNavigation.bind(this));
+        if (this.historyApiFallback) {
+            window.addEventListener("popstate", this.handleNavigation.bind(this));
+        } else {
+            window.addEventListener("hashchange", this.handleNavigation.bind(this));
+        }
     }
 }
 

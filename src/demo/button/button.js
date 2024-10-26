@@ -1,33 +1,33 @@
 import { html } from "lit";
-import { MyComponent } from "../../components/component/component";
+import { MdComponent } from "../../components/component/component";
 
-class DemoButtonComponent extends MyComponent {
+class DemoButtonComponent extends MdComponent {
     render() {
         /* prettier-ignore */
         return html`
-            <div class="my-grid">
-                <div class="my-grid__item--expanded12 my-grid__item--medium4 my-grid__item--compact4">
-                    <my-button variant="elevated" label="Elevated button" ></my-button>
-                    <my-button variant="elevated" label="Elevated button" icon="add" ></my-button>
+            <div class="md-grid">
+                <div class="md-grid__item--expanded12 md-grid__item--medium4 md-grid__item--compact4">
+                    <md-button variant="elevated" label="Elevated button" ></md-button>
+                    <md-button variant="elevated" label="Elevated button" icon="add" ></md-button>
                 </div>
-                <div class="my-grid__item--expanded12 my-grid__item--medium4 my-grid__item--compact4">
-                    <my-button variant="filled" label="Filled button" ></my-button>
-                    <my-button variant="filled" label="Filled button" icon="add" ></my-button>
+                <div class="md-grid__item--expanded12 md-grid__item--medium4 md-grid__item--compact4">
+                    <md-button variant="filled" label="Filled button" ></md-button>
+                    <md-button variant="filled" label="Filled button" icon="add" ></md-button>
                 </div>
-                <div class="my-grid__item--expanded12 my-grid__item--medium4 my-grid__item--compact4">
-                    <my-button variant="tonal" label="Filled tonal button" ></my-button>
-                    <my-button variant="tonal" label="Filled tonal button" icon="add" ></my-button>
+                <div class="md-grid__item--expanded12 md-grid__item--medium4 md-grid__item--compact4">
+                    <md-button variant="tonal" label="Filled tonal button" ></md-button>
+                    <md-button variant="tonal" label="Filled tonal button" icon="add" ></md-button>
                 </div>
-                <div class="my-grid__item--expanded12 my-grid__item--medium4 my-grid__item--compact4">
-                    <my-button variant="outlined" label="Outlined button" ></my-button>
-                    <my-button variant="outlined" label="Outlined button" icon="add" ></my-button>
+                <div class="md-grid__item--expanded12 md-grid__item--medium4 md-grid__item--compact4">
+                    <md-button variant="outlined" label="Outlined button" ></md-button>
+                    <md-button variant="outlined" label="Outlined button" icon="add" ></md-button>
                 </div>
-                <div class="my-grid__item--expanded12 my-grid__item--medium4 my-grid__item--compact4">
-                    <my-button label="Text button" ></my-button>
-                    <my-button label="Text button" icon="add" ></my-button>
+                <div class="md-grid__item--expanded12 md-grid__item--medium4 md-grid__item--compact4">
+                    <md-button label="Text button" ></md-button>
+                    <md-button label="Text button" icon="add" ></md-button>
                 </div>
-                <div class="my-grid__item--expanded12 my-grid__item--medium4 my-grid__item--compact4"></div>
-                <div class="my-grid__item--expanded12 my-grid__item--medium4 my-grid__item--compact4"></div>
+                <div class="md-grid__item--expanded12 md-grid__item--medium4 md-grid__item--compact4"></div>
+                <div class="md-grid__item--expanded12 md-grid__item--medium4 md-grid__item--compact4"></div>
             </div>
         `;
     }

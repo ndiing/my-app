@@ -4,7 +4,7 @@
     }
 }
 
-.my-ripple {
+.md-ripple {
     position: relative;
     --md-comp-ripple-radius: 141.4213562373095%;
     --md-comp-ripple-left: 50%;
@@ -28,17 +28,22 @@
     }
 }
 
-.my-ripple--bounded {
+.md-ripple--bounded {
     overflow: hidden;
 }
 
-.my-ripple--trigger {
+.md-ripple--trigger {
     cursor: pointer;
     user-select: none;
     -webkit-tap-highlight-color: transparent;
 }
 
-.my-ripple--focus {
+.md-ripple[selected] {
+    background-color: var(--md-sys-color-secondary-container);
+    color: var(--md-sys-color-on-secondary-container);
+}
+
+.md-ripple--focus {
     &::after {
         opacity: 10%;
         animation-name: ripple-out;
@@ -47,14 +52,14 @@
     }
 }
 
-.my-ripple--press {
+.md-ripple--press {
     &::after {
         opacity: 10%;
         animation-name: none;
     }
 }
 
-.my-ripple--hover {
+.md-ripple--hover {
     &::after {
         opacity: 8%;
     }

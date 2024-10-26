@@ -2,11 +2,11 @@ import { LitElement, html } from "lit";
 import { msg, updateWhenLocaleChanges } from "@lit/localize";
 
 /**
- * Kelas MyComponent adalah komponen LitElement yang mendukung lokalizasi.
+ * Kelas MdComponent adalah komponen LitElement yang mendukung lokalizasi.
  *
  * @extends LitElement
  */
-class MyComponent extends LitElement {
+class MdComponent extends LitElement {
     static properties = {
         variant: { type: String },
     };
@@ -21,7 +21,7 @@ class MyComponent extends LitElement {
     /**
      * Membuat root rendering untuk komponen ini.
      *
-     * @returns {MyComponent} Mengembalikan instance dari MyComponent.
+     * @returns {MdComponent} Mengembalikan instance dari MdComponent.
      */
     createRenderRoot() {
         return this;
@@ -69,4 +69,4 @@ class MyComponent extends LitElement {
     }
 }
 
-export { MyComponent };
+export { MdComponent };

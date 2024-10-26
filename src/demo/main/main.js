@@ -1,11 +1,11 @@
 import { html } from "lit";
-import { MyComponent } from "../../components/component/component";
+import { MdComponent } from "../../components/component/component";
 
-class DemoMainComponent extends MyComponent {
+class DemoMainComponent extends MdComponent {
     render() {
         return html`
-            <div class="my-border">
-                <div class="my-border__item--west" style="width:360px;padding:24px;">
+            <div class="md-border">
+                <div class="md-border__item--west" style="width:360px;padding:24px;">
                     <div>
                         <!-- <div routerLink="/">/</div> -->
                         <!-- <div routerLink="/users">/users</div> -->
@@ -20,10 +20,10 @@ class DemoMainComponent extends MyComponent {
                         <div routerLink="/segmented-button">/segmented-button</div>
                     </div>
                 </div>
-                <div class="my-border__item--center" style="padding:24px;">
+                <div class="md-border__item--center" style="padding:24px;">
                     <!-- <h1>Main</h1> -->
-                    <!-- <my-outlet name="user"></my-outlet> -->
-                    <my-outlet></my-outlet>
+                    <!-- <md-outlet name="user"></md-outlet> -->
+                    <md-outlet></md-outlet>
                 </div>
             </div>
         `;

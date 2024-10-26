@@ -1,6 +1,6 @@
 @use "../mixins/mixins.scss";
 
-.my-button {
+.md-button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -13,7 +13,7 @@
     color: var(--md-sys-color-primary);
     position: relative;
 }
-.my-button__native {
+.md-button__native {
     width: 100%;
     height: 100%;
     background-color: transparent;
@@ -26,15 +26,15 @@
     top: 0;
     z-index: 1;
 }
-.my-button__icon {
+.md-button__icon {
     width: 18px;
     height: 18px;
     font-size: 18px;
-    + .my-button__label {
+    + .md-button__label {
         margin-right: 4px;
     }
 }
-.my-button__label {
+.md-button__label {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -47,71 +47,71 @@
 // outlined
 // text
 
-.my-button--elevated {
+.md-button--elevated {
     background-color: var(--md-sys-color-surface-container-low);
     color: var(--md-sys-color-primary);
     box-shadow: var(--md-sys-elevation-level1);
     padding: 0 24px;
-    .my-button__icon {
+    .md-button__icon {
         margin-left: -8px;
-        + .my-button__label {
+        + .md-button__label {
             margin-right: 0;
         }
     }
 }
 
-.my-button--filled {
+.md-button--filled {
     background-color: var(--md-sys-color-primary);
     color: var(--md-sys-color-on-primary);
     box-shadow: var(--md-sys-elevation-level0);
     padding: 0 24px;
-    .my-button__icon {
+    .md-button__icon {
         margin-left: -8px;
-        + .my-button__label {
+        + .md-button__label {
             margin-right: 0;
         }
     }
-    &.my-ripple {
+    &.md-ripple {
         &::after {
             background-color: var(--md-sys-color-on-primary);
         }
     }
 }
 
-.my-button--tonal {
+.md-button--tonal {
     background-color: var(--md-sys-color-secondary-container);
     color: var(--md-sys-color-on-secondary-container);
     box-shadow: var(--md-sys-elevation-level0);
     padding: 0 24px;
-    .my-button__icon {
+    .md-button__icon {
         margin-left: -8px;
-        + .my-button__label {
+        + .md-button__label {
             margin-right: 0;
         }
     }
 }
 
-.my-button--outlined {
+.md-button--outlined {
     background-color: var(--md-sys-color-surface);
     color: var(--md-sys-color-primary);
     box-shadow: 0 0 0 1px var(--md-sys-color-outline);
     padding: 0 24px;
-    .my-button__icon {
+    .md-button__icon {
         margin-left: -8px;
-        + .my-button__label {
+        + .md-button__label {
             margin-right: 0;
         }
     }
 }
 
-.my-button--text {
+.md-button--text {
     background-color: var(--md-sys-color-surface);
     color: var(--md-sys-color-primary);
     box-shadow: none;
     padding: 0 12px;
-    .my-button__icon {
+    .md-button__icon {
         margin-left: 0px;
-        + .my-button__label {
+        + .md-button__label {
             margin-right: 4px;
         }
     }

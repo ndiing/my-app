@@ -1,8 +1,8 @@
 import { html, nothing } from "lit";
-import { MyComponent } from "../component/component";
+import { MdComponent } from "../component/component";
 
-class MyIconComponent extends MyComponent {}
+class MdIconComponent extends MdComponent {}
 
-customElements.define("my-icon", MyIconComponent);
+customElements.define("md-icon", MdIconComponent);
 
-export { MyIconComponent };
+export { MdIconComponent };
