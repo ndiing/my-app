@@ -14,6 +14,7 @@ class MdFabComponent extends MdComponent {
     };
 
     variants = ["surface", "secondary", "tertiary"];
+
     sizes = ["small", "large"];
 
     constructor() {

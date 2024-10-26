@@ -3,7 +3,7 @@ const rules = require("./webpack.rules");
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const WorkboxWebpackPlugin = require("workbox-webpack-plugin");
+// const WorkboxWebpackPlugin = require("workbox-webpack-plugin");
 
 const isProduction = process.env.NODE_ENV == "production";
 

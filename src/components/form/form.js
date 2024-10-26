@@ -26,6 +26,7 @@ class MdFormComponent extends MdComponent {
         this.method = "post";
         this.childNodes_ = Array.from(this.childNodes);
     }
+
     render() {
         /* prettier-ignore */
         return html`
