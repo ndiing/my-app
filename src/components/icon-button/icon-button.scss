@@ -1,0 +1,101 @@
+.md-icon-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    position: relative;
+}
+.md-icon-button__native {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    color: transparent;
+    font-size: 0;
+    line-height: 0;
+    letter-spacing: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+// .md-icon-button__icon{}
+.md-icon-button--filled {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: var(--md-sys-color-primary);
+    color: var(--md-sys-color-on-primary);
+    &.md-ripple {
+        &::after {
+            background-color: var(--md-sys-color-on-primary);
+        }
+    }
+    &[toggle] {
+        background-color: var(--md-sys-color-surface-container-highest);
+        color: var(--md-sys-color-primary);
+        &.md-ripple {
+            &::after {
+                background-color: var(--md-sys-color-primary);
+            }
+        }
+        &[selected] {
+            background-color: var(--md-sys-color-primary);
+            color: var(--md-sys-color-on-primary);
+            &.md-ripple {
+                &::after {
+                    background-color: var(--md-sys-color-on-primary);
+                }
+            }
+        }
+    }
+}
+.md-icon-button--tonal {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: var(--md-sys-color-secondary-container);
+    color: var(--md-sys-color-on-secondary-container);
+    &[toggle] {
+        background-color: var(--md-sys-color-surface-container-highest);
+        color: var(--md-sys-color-on-surface-variant);
+        &[selected] {
+            background-color: var(--md-sys-color-secondary-container);
+            color: var(--md-sys-color-on-secondary-container);
+        }
+    }
+}
+.md-icon-button--outlined {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: var(--md-sys-color-surface);
+    color: var(--md-sys-color-on-surface-variant);
+    box-shadow: 0 0 0 1px var(--md-sys-color-outline);
+    &[toggle] {
+        background-color: var(--md-sys-color-surface);
+        color: var(--md-sys-color-on-surface-variant);
+        box-shadow: 0 0 0 1px var(--md-sys-color-outline);
+        &[selected] {
+            background-color: var(--md-sys-color-inverse-surface);
+            color: var(--md-sys-color-inverse-on-surface);
+            box-shadow: 0 0 0 1px var(--md-sys-color-verse-surface);
+            &.md-ripple {
+                &::after {
+                    background-color: var(--md-sys-color-on-primary);
+                }
+            }
+        }
+    }
+}
+.md-icon-button--standard {
+    background-color: var(--md-sys-color-surface);
+    color: var(--md-sys-color-on-surface);
+    &[toggle] {
+        background-color: var(--md-sys-color-surface);
+        color: var(--md-sys-color-on-surface);
+        &[selected] {
+            background-color: var(--md-sys-color-surface);
+            color: var(--md-sys-color-primary);
+        }
+    }
+}

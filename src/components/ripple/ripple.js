@@ -29,13 +29,12 @@ class RippleController {
         const rect = this.container.getBoundingClientRect();
 
         if (!this.options.centered) {
-            const radius = this.radius;
             const left = (event.clientX - rect.left) / rect.width;
             const top = (event.clientY - rect.top) / rect.height;
-            const translateX = (0.5 - left) * (100 / radius);
-            const translateY = (0.5 - top) * ((100 / radius) * (rect.height / rect.width));
+            const translateX = (0.5 - left) * (100 / this.radius);
+            const translateY = (0.5 - top) * ((100 / this.radius) * (rect.height / rect.width));
 
-            this.container.style.setProperty("--md-comp-ripple-radius", radius + "%");
+            this.container.style.setProperty("--md-comp-ripple-radius", this.radius + "%");
             this.container.style.setProperty("--md-comp-ripple-left", left * 100 + "%");
             this.container.style.setProperty("--md-comp-ripple-top", top * 100 + "%");
             this.container.style.setProperty("--md-comp-ripple-translateX", translateX * 100 + "%");
@@ -68,7 +67,13 @@ class RippleController {
 
         this.container.classList.add("md-ripple");
         this.container.classList.toggle("md-ripple--bounded", !this.options.unbounded);
+
         this.radius = 141.4213562373095;
+        if (this.options.radius) {
+            const rect = this.container.getBoundingClientRect();
+            this.radius = (this.options.radius / rect.width) * 100;
+        }
+        this.container.style.setProperty("--md-comp-ripple-radius", this.radius + "%");
 
         this.trigger.setAttribute("tabIndex", 0);
         this.trigger.classList.add("md-ripple--trigger");

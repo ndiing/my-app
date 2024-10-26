@@ -18,6 +18,7 @@ class DemoMainComponent extends MdComponent {
                         <div routerLink="/icon">/icon</div>
                         <div routerLink="/button">/button</div>
                         <div routerLink="/segmented-button">/segmented-button</div>
+                        <div routerLink="/icon-button">/icon-button</div>
                     </div>
                 </div>
                 <div class="md-border__item--center" style="padding:24px;">
